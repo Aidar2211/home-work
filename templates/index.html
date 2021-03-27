@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<header>
+    <a href="/add_product/">
+        <button type="button">Add post </button>
+    </a>
+
+    <a href="/add_product_comments/">
+        <button type="button">Add comment for posts </button>
+    </a>
+
+</header>
+<body>
+<h1>List of product ffffffffpidarfz</h1>
+{% for product in products %}
+    <a href="{{ product.id }}">{{ product.title }}</a>
+    <p>{{ product.category.name }}</p>
+    <p>{{ product.category.rating }}</p>
+    <p>{{ product.created }}</p>
+
+{% endfor %}
+</body>
+</html>

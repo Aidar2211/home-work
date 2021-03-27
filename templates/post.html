@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+<a href="/posts/">ALL POST</a>
+<h4>{{ product.title }}</h4>
+<p>{{ product.description }}</p>
+<p>{{ product.category }}</p>
+<p>{{ product.created }}</p>
+<hr>
+<h2>Comments</h2>
+{% for comment in comments %}
+    <p>name-{{ comment.name }}</p>
+    <p>Text-{{ comment.body }}</p>
+    <p>created-{{ comment.created }}</p>
+{% endfor %}
+
+<form action="/posts/{{ product.id }}/" method="post">
+    {% csrf_token %}
+    {{ form.as_p }}
+    <button type="submit">add commment</button>
+
+</form>
+</body>
+</html>
